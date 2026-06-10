@@ -1,0 +1,93 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Belle Italia – Restaurant Gastronomique Italien</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            title: ['Cormorant Garamond', 'serif'],
+            body: ['Jost', 'sans-serif'],
+          },
+          colors: {
+            cream: '#FAF6EF',
+            gold: '#C9A84C',
+            'gold-light': '#E8C97A',
+            charcoal: '#1A1A1A',
+            olive: '#4A5240',
+            'warm-gray': '#8C8279',
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.7s ease forwards',
+            'fade-in': 'fadeIn 1s ease forwards',
+          },
+          keyframes: {
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; background-color: #FAF6EF; color: #1A1A1A; }
+    h1, h2, h3, h4, h5, h6, .font-title { font-family: 'Cormorant Garamond', serif; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #FAF6EF; }
+    ::-webkit-scrollbar-thumb { background: #C9A84C; border-radius: 10px; }
+
+    /* Gold gradient underline */
+    .gold-underline {
+      position: relative;
+      display: inline-block;
+    }
+    .gold-underline::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -6px;
+      width: 60px; height: 2px;
+      background: linear-gradient(90deg, #C9A84C, #E8C97A);
+    }
+
+    /* Parallax hero */
+    .hero-bg {
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Nav link hover */
+    .nav-link {
+      position: relative;
+      transition: color 0.3s;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 1px;
+      background: #C9A84C;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .nav-link:hover { color: #C9A84C; }
+
+    /* Card hover */
+    .card-hover {
+      transition: transform 0.4s ease, box-shadow 0.4s ease
